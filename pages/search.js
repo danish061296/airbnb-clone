@@ -6,7 +6,8 @@ import InfoCard from '../components/InfoCard';
 
 const Search = ({ searchResults }) => {
   const router = useRouter();
-  const { location, startDate, endDate, numberOfGuests } = router.query;
+  const { location, startDate, endDate, numberOfAdults, numberOfKids } =
+    router.query;
 
   const dateRange = () => {
     const formattedStartDate = format(new Date(startDate), 'dd MMMM yy');
@@ -17,13 +18,14 @@ const Search = ({ searchResults }) => {
   return (
     <div className="h-screen">
       <Header
-        placeholder={`${location} | ${dateRange()} | ${numberOfGuests} guests`}
+        placeholder={`${location} | ${dateRange()} | ${numberOfAdults} adults | ${numberOfKids}`}
       />
 
       <main className="flex">
         <section className="flex-grow pt-14 px-6 ">
           <p className="text-xs">
-            300+ Stays - {dateRange()} - for {numberOfGuests} guests
+            300+ Stays - {dateRange()} - for {numberOfAdults} adults &{' '}
+            {numberOfKids} kids
           </p>
           <h1 className="text-3xl font-semibold mt-2 mb-6">
             Stays in {location}
