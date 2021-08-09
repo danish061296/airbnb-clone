@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
+import { withRouter } from 'next/router';
 import Image from 'next/image';
 import {
   SearchIcon,
@@ -13,13 +14,13 @@ import 'react-date-range/dist/theme/default.css'; // theme css file
 import { DateRangePicker, DateRange } from 'react-date-range';
 import { useRouter } from 'next/dist/client/router';
 
-const Header = ({ placeholder }) => {
+const Header = ({ placeholder, router }) => {
   const [searchInput, setSearchInput] = useState('');
   const [scrollDown, setScrollDown] = React.useState(false);
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
   const [numberOfGuests, setNumberOfGuests] = useState(1);
-  const router = useRouter();
+  const routerP = useRouter();
   // to check if the screen size is for mobile devices
   const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
 
@@ -29,7 +30,7 @@ const Header = ({ placeholder }) => {
   };
 
   const searchPlaces = () => {
-    router.push({
+    routerP.push({
       pathname: './search',
       query: {
         location: searchInput,
@@ -58,7 +59,7 @@ const Header = ({ placeholder }) => {
     }
   };
 
-  if (process.browser) {
+  if (process.browser && router.pathname == '/') {
     window.addEventListener('scroll', changeNavbarColor);
   }
 
@@ -69,13 +70,15 @@ const Header = ({ placeholder }) => {
   return (
     <header
       className={
-        !scrollDown
-          ? 'sticky top-0  z-50 grid grid-cols-3 bg-[#001226]  shadow-md p-4 md:px-10'
+        router.pathname === '/'
+          ? !scrollDown
+            ? 'sticky top-0  z-50 grid grid-cols-3 bg-[#001226]  shadow-md p-4 md:px-10'
+            : 'sticky top-0  z-50 grid grid-cols-3 bg-white  shadow-md p-4 md:px-10 transition duration-300'
           : 'sticky top-0  z-50 grid grid-cols-3 bg-white  shadow-md p-4 md:px-10 transition duration-300'
       }
     >
       <div
-        onClick={() => router.push('./')}
+        onClick={() => routerP.push('./')}
         className="relative flex items-center h-10 cursor-pointer my-auto"
       >
         <Image
@@ -92,9 +95,11 @@ const Header = ({ placeholder }) => {
           type="text"
           placeholder={placeholder || 'Start your search'}
           className={
-            !scrollDown
-              ? 'placeholder-white text-white flex-grow pl-4 md:pl-5 bg-transparent outline-none '
-              : ' placeholder-gray-600 flex-grow pl-4 md:pl-5 bg-transparent outline-none '
+            router.pathname === '/'
+              ? !scrollDown
+                ? 'placeholder-white text-white flex-grow pl-4 md:pl-5 bg-transparent outline-none '
+                : ' placeholder-gray-600 flex-grow pl-4 md:pl-5 bg-transparent outline-none '
+              : 'placeholder-gray-600 flex-grow pl-4 md:pl-5 bg-transparent outline-none '
           }
         />
         <SearchIcon className="hidden h-8 text-red-500 md:inline-flex md:bg-red-500 md:text-white md:rounded-full p-2 cursor-pointer md:mx-2" />
@@ -102,8 +107,10 @@ const Header = ({ placeholder }) => {
 
       <div
         className={
-          !scrollDown
-            ? 'flex space-x-4 items-center justify-end text-gray-300'
+          router.pathname === '/'
+            ? !scrollDown
+              ? 'flex space-x-4 items-center justify-end text-gray-300'
+              : 'flex space-x-4 items-center justify-end text-gray-500'
             : 'flex space-x-4 items-center justify-end text-gray-500'
         }
       >
@@ -116,13 +123,15 @@ const Header = ({ placeholder }) => {
       </div>
       <div
         className={
-          !scrollDown
-            ? 'absolute -bottom-20  bg-gradient-to-b from-[#000d1d] h-24 w-full'
+          router.pathname === '/'
+            ? !scrollDown
+              ? 'absolute -bottom-20  bg-gradient-to-b from-[#000d1d] h-24 w-full'
+              : ' '
             : ' '
         }
       />
       {searchInput && (
-        <div className="flex flex-col col-span-3 mx-auto">
+        <div className="flex flex-col col-span-3 mx-auto ">
           {isMobile ? (
             <DateRange
               ranges={[selectionRange]}
@@ -140,8 +149,10 @@ const Header = ({ placeholder }) => {
           )}
           <div
             className={
-              !scrollDown
-                ? 'flex items-center bg-white border-b pb-4 px-4'
+              router.pathname === '/'
+                ? !scrollDown
+                  ? 'flex items-center bg-white border-b pb-4 px-4'
+                  : 'flex items-center border-b mb-4 px-4'
                 : 'flex items-center border-b mb-4 px-4'
             }
           >
@@ -157,7 +168,15 @@ const Header = ({ placeholder }) => {
               className="w-12 ml-2 pl-2 text-lg outline-none text-red-400 border border-red-500 rounded-lg"
             />
           </div>
-          <div className={!scrollDown ? 'flex bg-white p-3' : 'flex '}>
+          <div
+            className={
+              router.pathname === '/'
+                ? !scrollDown
+                  ? 'flex bg-white p-3'
+                  : 'flex '
+                : 'flex'
+            }
+          >
             <button onClick={resetInput} className="flex-grow text-gray-500">
               Cancel
             </button>
@@ -171,4 +190,5 @@ const Header = ({ placeholder }) => {
   );
 };
 
-export default Header;
+// export default Header;
+export default withRouter(Header);
