@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 import Image from 'next/image';
 import {
   SearchIcon,
@@ -9,7 +10,7 @@ import {
 } from '@heroicons/react/solid';
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
-import { DateRangePicker } from 'react-date-range';
+import { DateRangePicker, DateRange } from 'react-date-range';
 import { useRouter } from 'next/dist/client/router';
 
 const Header = ({ placeholder }) => {
@@ -19,6 +20,8 @@ const Header = ({ placeholder }) => {
   const [endDate, setEndDate] = useState(new Date());
   const [numberOfGuests, setNumberOfGuests] = useState(1);
   const router = useRouter();
+  // to check if the screen size is for mobile devices
+  const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
 
   const selectDates = (ranges) => {
     setStartDate(ranges.selection.startDate);
@@ -82,7 +85,6 @@ const Header = ({ placeholder }) => {
           objectPosition="left"
         />
       </div>
-      {/* Search Section */}
       <div className="flex items-center sm:border-2 rounded-full py-2 ml-3 shadow-md md:shadow-sm md:hover:shadow-md cursor-pointer text-sm ">
         <input
           value={searchInput}
@@ -121,12 +123,21 @@ const Header = ({ placeholder }) => {
       />
       {searchInput && (
         <div className="flex flex-col col-span-3 mx-auto">
-          <DateRangePicker
-            ranges={[selectionRange]}
-            minDate={new Date()}
-            rangeColors={['#FD5B61']}
-            onChange={selectDates}
-          />
+          {isMobile ? (
+            <DateRange
+              ranges={[selectionRange]}
+              minDate={new Date()}
+              rangeColors={['#FD5B61']}
+              onChange={selectDates}
+            />
+          ) : (
+            <DateRangePicker
+              ranges={[selectionRange]}
+              minDate={new Date()}
+              rangeColors={['#FD5B61']}
+              onChange={selectDates}
+            />
+          )}
           <div
             className={
               !scrollDown
