@@ -6,6 +6,7 @@ import Header from '../components/Header';
 import LargeCard from '../components/LargeCard';
 import MediumCard from '../components/MediumCard';
 import SmallCard from '../components/SmallCard';
+import React from 'react';
 
 export default function Home({ exploreData, cardsData }) {
   return (
@@ -18,6 +19,7 @@ export default function Home({ exploreData, cardsData }) {
       <Header />
 
       <Banner />
+
       <main className="sm:max-w-7xl sm:mx-auto px-8 pb-10">
         <section className="pt-14 ">
           <h2 className="text-4xl text-black font-semibold pb-5">
