@@ -2,7 +2,7 @@
 
 Created with Next.js, ReactJS, Tailwind CSS, Mapbox, REST API, HTML, CSS.
 
-<a href="https://airbnb-clone-nine-mocha.vercel.app/">LIVE DEMO</a>
+<a href="https://airbnb-clone-jc8a6wm50-danish061296.vercel.app/">LIVE DEMO</a>
 
 
 # Next.js + Tailwind CSS Example
