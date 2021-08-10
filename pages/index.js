@@ -12,6 +12,10 @@ export default function Home({ exploreData, cardsData }) {
   return (
     <div className="">
       <Head>
+        <link
+          href="https://api.mapbox.com/mapbox-gl-js/v2.4.0/mapbox-gl.css"
+          rel="stylesheet"
+        />
         <title>Airbnb-Clone</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>

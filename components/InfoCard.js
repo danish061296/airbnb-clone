@@ -18,7 +18,7 @@ const InfoCard = ({
           src={img}
           layout="fill"
           objectFit="cover"
-          className="rounded-xl"
+          className="rounded-2xl"
         />
       </div>
       <div className="flex flex-col flex-grow pl-5">

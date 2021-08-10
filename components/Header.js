@@ -19,7 +19,7 @@ const Header = ({ placeholder, router }) => {
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
   const [numberOfAdults, setNumberOfAdults] = useState(1);
-  const [numberOfKids, setNumberOfKids] = useState(1);
+  const [numberOfKids, setNumberOfKids] = useState(0);
 
   const routerP = useRouter();
   // to check if the screen size is for mobile devices
