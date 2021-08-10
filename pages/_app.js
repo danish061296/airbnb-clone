@@ -1,5 +1,7 @@
 import 'tailwindcss/tailwind.css';
 import '../styles/global.css';
+import 'mapbox-gl/dist/mapbox-gl.css';
+
 import ProgressBar from '@badrap/bar-of-progress';
 import Router from 'next/router';
 

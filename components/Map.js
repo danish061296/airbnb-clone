@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import getCenter from 'geolib/es/getCenter';
+import PopupContent from './PopupContent';
 
 const Map = ({ searchResults }) => {
   const [selectedLocation, setSelectedLocation] = useState({});
@@ -53,7 +54,7 @@ const Map = ({ searchResults }) => {
               latitude={result.lat}
               longitude={result.long}
             >
-              {result.title}
+              <PopupContent result={result} />
             </Popup>
           ) : (
             false
