@@ -2,35 +2,58 @@
 
 Created with Next.js, ReactJS, Tailwind CSS, Mapbox, REST API, HTML, CSS.
 
-<a href="https://airbnb-clone-jc8a6wm50-danish061296.vercel.app/">LIVE DEMO</a>
+# Functionality
+
+Type a city name on search bar, select the booking dates on calender, provide no of guests and search. The search will show a dummy data for now with it's actual map positions as well.
+
+<a href="https://airbnb-clone-jc8a6wm50-danish061296.vercel.app/"><strong>LIVE DEMO</strong></a>
+
+# App Screenshots
+
+## Desktop Version
+
+<img src="images/des-1.png" width="500px" height="300px"/>
+</br>
+</br>
 
 
-# Next.js + Tailwind CSS Example
+</br>
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v2.2)](https://blog.tailwindcss.com/tailwindcss-2-2) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+<img src="images/des-2.png"  width="500px" height="300px" />
 
-It uses the new [`Just-in-Time Mode`](https://tailwindcss.com/docs/just-in-time-mode) for Tailwind CSS.
+</br>
+</br>
 
-## Preview
 
-Preview the example live on [StackBlitz](http://stackblitz.com/):
+</br>
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
 
-## Deploy your own
+<img src="images/des-3.png"  width="500px" height="300px" />
+</br>
+</br>
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+</br>
 
-## How to use
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
 
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-# or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
+<img src="images/des-4.png"  width="500px" height="300px" />
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+</br>
+</br>
+
+
+</br>
+
+
+## Mobile Version
+
+<img src="images/mob-2.png"  width="200px" height="300px" />   <span width="100px"></span>            <img src="images/mob-1.png"  width="200px" height="300px" />
+
+
+
+
+
+## Inspired by:
+
+Sonny Sangha (PAPA REACT)
