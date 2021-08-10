@@ -3,7 +3,7 @@ import { StarIcon } from '@heroicons/react/solid';
 
 function PopupContent({ result: { img, star, price, location } }) {
   return (
-    <div className="h-70 w-[250px] bg-white  flex flex-col  rounded-3xl ">
+    <div className="h-70 w-[250px] bg-white  flex flex-col rounded-3xl z-50">
       <div className="relative h-40 w-[250px] ">
         <Image
           src={img}
