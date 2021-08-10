@@ -20,8 +20,8 @@ const InfoCard = ({
   };
 
   return (
-    <div className="flex py-7 px-2 pr-4 border-b cursor-pointer hover:opacity-80 hover:shadow-lg transition duration-200 ease-out first:border-t ">
-      <div className="relative h-24 w-40 md:h-52 md:w-80 flex-shrink-0">
+    <div className="flex flex-col  sm:flex sm:flex-row py-7 px-2 pr-4 border-b cursor-pointer hover:opacity-80 hover:shadow-lg transition duration-200 ease-out first:border-t ">
+      <div className="relative h-80 w-120 sm:h-52 sm:w-80 flex-shrink-0">
         <Image
           src={img}
           layout="fill"
@@ -30,8 +30,8 @@ const InfoCard = ({
         />
       </div>
       <div className="flex flex-col flex-grow pl-5">
-        <div className="flex justify-between">
-          <p>{location}</p>
+        <div className="flex justify-between mt-6 sm:mt-0">
+          <p className="font-light ">{location}</p>
           <div onClick={isHeartClicked}>
             {heartClicked ? (
               <SolidHeartIcon className="h-7 cursor-pointer text-red-500 border-black " />
@@ -50,7 +50,7 @@ const InfoCard = ({
           </p>
           <div>
             <p className="text-lg lg:text-2xl font-semibold pb-2">{price}</p>
-            <p className="text-right font-extralight">{total}</p>
+            <p className="text-right font-extralight underline">{total}</p>
           </div>
         </div>
       </div>

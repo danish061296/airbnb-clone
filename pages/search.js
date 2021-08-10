@@ -19,7 +19,7 @@ const Search = ({ searchResults }) => {
   return (
     <div className="h-screen">
       <Header
-        placeholder={`${location} | ${dateRange()} | ${numberOfAdults} adults | ${numberOfKids}`}
+        placeholder={`${location} | ${dateRange()} | ${numberOfAdults} adults  | ${numberOfKids}`}
       />
 
       <main className="flex">
@@ -57,7 +57,7 @@ const Search = ({ searchResults }) => {
               )}
           </div>
         </section>
-        <section className="hidden xl:inline-flex xl:min-w-[600px]">
+        <section className="hidden md:inline-flex xl:min-w-[600px]">
           <Map searchResults={searchResults} />
         </section>
       </main>

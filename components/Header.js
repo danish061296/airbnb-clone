@@ -90,7 +90,7 @@ const Header = ({ placeholder, router }) => {
           objectPosition="left"
         />
       </div>
-      <div className="bg-gray-100  w-5/6  flex items-center sm:border-2 rounded-full py-2 ml-3 sm:bg-white shadow-md md:shadow-sm md:hover:shadow-md cursor-pointer text-sm ">
+      <div className="bg-gray-100  w-5/6 mx-auto  flex items-center sm:border-2 rounded-full py-2  sm:bg-white shadow-md md:shadow-sm md:hover:shadow-md cursor-pointer text-sm ">
         <input
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
@@ -127,7 +127,7 @@ const Header = ({ placeholder, router }) => {
         className={
           router.pathname === '/'
             ? !scrollDown
-              ? 'absolute -bottom-20  bg-gradient-to-b from-[#000d1d] h-24 w-full'
+              ? 'absolute -bottom-20 bg-gradient-to-b from-[#000d1d] h-24 w-full'
               : ' '
             : ' '
         }

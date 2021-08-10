@@ -2,7 +2,7 @@ import { useState } from 'react';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import getCenter from 'geolib/es/getCenter';
 import PopupContent from './PopupContent';
-import { LocationMarkerIcon } from '@heroicons/react/solid';
+import PriceMarker from './PriceMarker';
 
 const Map = ({ searchResults }) => {
   const [selectedLocation, setSelectedLocation] = useState({});
@@ -40,11 +40,11 @@ const Map = ({ searchResults }) => {
           >
             <p
               onClick={() => setSelectedLocation(result)}
-              className="cursor-pointer text-2xl animate-bounce"
+              className="cursor-pointer text-2xl "
               role="img"
               aria-label="push-pin"
             >
-              <LocationMarkerIcon className="h-6 w-6 text-red-600 z-20" />
+              <PriceMarker price={result.price} />
             </p>
           </Marker>
           {/* pop up that shows if a marker is clicked */}
