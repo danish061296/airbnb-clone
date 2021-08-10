@@ -10,7 +10,7 @@ const FooterMobile = () => {
       </div>
       <div className="flex flex-col items-center justify-center">
         <HeartIcon className="h-7 mt-2" />
-        <p className="text-sm">Whishlists</p>
+        <p className="text-sm">Wishlists</p>
       </div>
       <div className="flex flex-col items-center justify-center">
         <UserCircleIcon className="h-7 mt-2" />
